@@ -9,7 +9,7 @@ RUN npm install
 COPY ./ ./
 
 #build npm command
-RUN npm run build
+RUN npm build
 
 
 #run phase,base image is nginx
