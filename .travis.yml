@@ -1,0 +1,11 @@
+#tell travis that we need admin rights for executing the docker commands
+sudo: required
+#tell travis about the different services required, in our case docker is required
+services:
+	- docker
+# tell travis what needs to be done for building the image
+before_install:
+	- docker build -t renjitclement/docker-react -f Dockerfile.dev .
+# tell travis how to execute our test cases
+script:
+  - docker run renjitclement/docker-react npm run test -- -- coverage
