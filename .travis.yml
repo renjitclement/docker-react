@@ -2,10 +2,10 @@
 sudo: required
 #tell travis about the different services required, in our case docker is required
 services:
-	- docker
+  - docker
 # tell travis what needs to be done for building the image
 before_install:
-	- docker build -t renjitclement/docker-react -f Dockerfile.dev .
+  - docker build -t renjitclement/docker-react -f Dockerfile.dev .
 # tell travis how to execute our test cases
 script:
-  - docker run renjitclement/docker-react npm run test -- -- coverage
+  - docker run renjitclement/docker-react npm run test -- --coverage
