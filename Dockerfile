@@ -12,9 +12,9 @@ COPY ./ ./
 RUN npm run build
 
 
-#run phase,base image is nginx
+#run phase, base image is nginx
 FROM nginx
-#copy ffrom the builder phase to the location in nginx container as mentioned below
+#this will not add any changes for the developer, but is an indication for the aws instance to expose port 80
+EXPOSE 80
+#copy from the builder phase to the location in nginx container as mentioned below
 COPY --from=builder /usr/app/build /usr/share/nginx/html
-
-
