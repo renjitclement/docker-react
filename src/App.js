@@ -11,6 +11,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
             <br/>
+            now we moved to git feature branch
             By renjit clement
           </p>
           <a
